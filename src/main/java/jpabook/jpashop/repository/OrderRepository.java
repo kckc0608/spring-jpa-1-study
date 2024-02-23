@@ -38,7 +38,7 @@ public class OrderRepository {
             jpql += " o.status = :status";
         }
 
-        if (orderSearch.getMemberName() != null) {
+        if (!StringUtils.isEmpty(orderSearch.getMemberName())) {
             if (isFirstCondition) {
                 jpql += " where";
                 isFirstCondition = false;
